@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html class="no-js ss-preload" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Gaurav Kulkarni - Portfolio</title>
+    <meta name="description" content="Personal Portfolio of Gaurav Kulkarni">
+    <meta name="author" content="Gaurav Kulkarni">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <style>
+        /* Ultra-fast animations */
+        [data-animate-el] {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.3s ease-out,
+                        transform 0.3s ease-out;
+        }
+
+        [data-animate-el].is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Instant hero animation */
+        .text-huge-title {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease-out;
+            filter: blur(2px);
+        }
+
+        .text-huge-title.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        /* Quick social icons */
+        .intro-social li {
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: all 0.25s ease-out;
+            transition-delay: calc(var(--item-index) * 0.05s);
+        }
+
+        .intro-social.is-visible li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Instant project cards */
+        .folio-list__item {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.3s ease-out;
+        }
+
+        .folio-list__item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .folio-list__item:hover {
+            transform: translateY(-5px);
+            transition: transform 0.2s ease;
+        }
+
+        /* Rapid skills list */
+        .skills-list li {
+            opacity: 0;
+            transform: translateX(15px);
+            transition: all 0.25s ease-out;
+            transition-delay: calc(var(--item-index) * 0.04s);
+        }
+
+        .skills-list.is-visible li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Quick service items */
+        .service-item {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.3s ease-out;
+            transition-delay: calc(var(--item-index) * 0.05s);
+        }
+
+        .service-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Instant timeline */
+        .timeline__block {
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: all 0.3s ease-out;
+        }
+
+        .timeline__block.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Snappy button animations */
+        .btn {
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Quick scroll */
+        html {
+            scroll-behavior: auto;
+        }
+
+        /* Instant hover effects */
+        .contact-social a {
+            transition: all 0.2s ease;
+        }
+
+        .contact-social a:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Remove float animation for better performance */
+        .service-item.is-visible {
+            animation: none;
+        }
+    </style>
+
+</head>
+
+<body id="top">
+
+
+    <!-- # preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+        </div>
+    </div>
+
+
+    <!-- # page wrap
+    ================================================== -->
+    <div class="s-pagewrap">
+
+        <div class="circles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <!-- ## site header 
+        ================================================== -->
+        <header class="s-header">
+
+            <div class="header-mobile">
+                <span class="mobile-home-link"><a href="index.html">Gaurav Kulkarni</a></span>
+                <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+            </div>
+
+            <div class="row wide main-nav-wrap">
+                <nav class="column lg-12 main-nav">
+                    <ul>
+                        <li><a href="index.html" class="home-link">Gaurav Kulkarni</a></li>
+                        <li class="current"><a href="#intro" class="smoothscroll">Home</a></li>
+                        <li><a href="#about" class="smoothscroll">About</a></li>
+                        <li><a href="#services" class="smoothscroll">Services</a></li>
+                        <li><a href="#works" class="smoothscroll">Works</a></li>
+                        <li><a href="#contact" class="smoothscroll">Say Hello</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header> <!-- end s-header -->
+
+
+        <!-- ## main content
+        ================================================== -->
+        <main class="s-content">
+
+
+            <!-- ### intro
+            ================================================== -->
+            <section id="intro" class="s-intro target-section">
+
+                <div class="row intro-content wide">
+
+                    <div class="column">
+                        <div class="text-pretitle with-line">
+                            Hello World
+                        </div>
+
+                        <h1 class="text-huge-title">
+                            I am Gaurav, <br>
+                            a Python Developer <br>
+                            & AI/ML Enthusiast, <br> 
+                            Aspiring Ethical <br>
+                            Hacker
+                        </h1>
+                    </div>
+
+                    <ul class="intro-social">
+                        <li><a href="https://github.com/Official-GK">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/gaurav-kulkarni-37b021216/">LinkedIn</a></li>
+                        <li><a href="https://twitter.com/yourtwitter">Twitter</a></li>
+                    </ul>
+
+                </div> <!-- end intro content -->
+
+                <a href="#about" class="intro-scrolldown smoothscroll">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764.645-6.236 7.529v-21.884h-1v21.883z"/></svg>
+                </a>
+
+            </section> <!-- end s-intro -->
+
+
+            <!-- ### about
+            ================================================== -->
+            <section id="about" class="s-about target-section">
+
+                <div class="row about-info wide" data-animate-block>
+
+                    <div class="column lg-6 md-12 about-info__pic-block">
+                        <img src="images/about-photo.jpg" 
+                             srcset="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format 1x, https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format 2x" alt="Coding Environment" class="about-info__pic" data-animate-el>
+                    </div>
+
+                    <div class="column lg-6 md-12">
+                        <div class="about-info__text" >
+
+                            <h2 class="text-pretitle with-line" data-animate-el>
+                                About
+                            </h2>
+                            <p class="attention-getter" data-animate-el>
+                                I am a first-year B.Tech CSE student at Institute of Technology and Management Skills, 
+                                passionate about Artificial Intelligence, Machine Learning, and Ethical Hacking. 
+                                I love building innovative solutions and exploring the intersection of technology and security.
+                            </p>
+                            <a href="#0" class="btn btn--medium u-fullwidth" data-animate-el>Download CV</a>
+
+                        </div>
+                    </div>
+                </div> <!-- about-info -->
+
+                <div class="row about-expertise" data-animate-block>
+                    <div class="column lg-12">
+
+                        <h2 class="text-pretitle" data-animate-el>Expertise</h2>
+
+                        <ul class="skills-list h1" data-animate-el>
+                            <li>Python Development</li>
+                            <li>Machine Learning</li>
+                            <li>Artificial Intelligence</li>
+                            <li>Ethical Hacking</li>
+                            <li>Data Science</li>
+                            <li>Cybersecurity</li>
+                        </ul>
+
+                    </div>
+                </div> <!-- end about-expertise -->
+
+                <div class="row about-timelines" data-animate-block>
+
+                    <div class="column lg-6 tab-12">
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Experience
+                        </h2>
+
+                        <div class="timeline" data-animate-el>
+
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">CodeSprout</h4>
+                                    <h5 class="timeline__meta">Personal Project</h5>
+                                    <p class="timeline__timeframe">2024</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>A Python-based project showcasing my development skills and passion for coding. Implemented various features and functionalities using modern programming practices.</p>
+                                </div>
+                            </div>
+    
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">Questly</h4>
+                                    <h5 class="timeline__meta">Personal Project</h5>
+                                    <p class="timeline__timeframe">2024</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>An innovative project demonstrating my ability to create practical solutions. Focused on delivering value through technology.</p>
+                                </div>
+                            </div>
+    
+                        </div> <!-- end timeline -->
+
+                    </div> <!-- end column -->
+
+                    <div class="column lg-6 tab-12">
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Education
+                        </h2>
+
+                        <div class="timeline" data-animate-el>
+
+                            <div class="timeline__block" data-animate-el>
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">B.Tech in Computer Science and Engineering</h4>
+                                    <h5 class="timeline__meta">Institute of Technology and Management Skills</h5>
+                                    <p class="timeline__timeframe">2024 - 2028</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>First-year student focusing on computer science fundamentals, AI/ML, and cybersecurity. Actively participating in coding projects and technical workshops.</p>
+                                </div>
+                            </div>
+    
+                        </div> <!-- end timeline -->
+                        
+                    </div> <!-- end column -->
+
+                </div> <!-- end about-timelines -->
+
+            </section> <!-- end s-about -->
+
+
+            <!-- ### services
+            ================================================== -->
+            <section id="services" class="s-services target-section">
+
+                <div class="row section-header">
+                    <div class="column large-12">
+                        <h3>My Skills</h3>
+                    </div>
+                </div>
+
+                <div class="row services-list block-large-1-3 block-medium-1-2 block-tab-full">
+
+                    <div class="column service-item">
+                        <div class="service-icon service-icon--brand-identity">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="service-text">
+                            <h3>Python Development</h3>
+                            <p>
+                                Experienced in building scalable and efficient Python applications using modern frameworks and libraries.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column service-item">
+                        <div class="service-icon service-icon--illustration">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="service-text">
+                            <h3>Artificial Intelligence</h3>
+                            <p>
+                                Knowledgeable in AI concepts, including machine learning, deep learning, and natural language processing.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column service-item">
+                        <div class="service-icon service-icon--web-design">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="service-text">
+                            <h3>Ethical Hacking</h3>
+                            <p>
+                                Familiar with security testing and vulnerability assessment techniques to ensure secure software development.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section> <!-- end s-services -->
+
+
+            <!-- ### works
+            ================================================== -->
+            <section id="works" class="s-works target-section">
+
+                <div class="row works-portfolio">
+
+                    <div class="column lg-12" data-animate-block>
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Recent Projects
+                        </h2>
+                        <p class="h1" data-animate-el>
+                            Here are some of my favorite projects I have worked on. Feel free to check them out.
+                        </p>
+    
+                        <ul class="folio-list row block-lg-one-half block-stack-on-1000">
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-01">
+                                    <div class="folio-list__item-pic">
+                                        <img src="images/portfolio/project1.jpg"
+                                             srcset="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000&auto=format 1x, https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2000&auto=format 2x" alt="Python Development">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                            Python Development
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            CodeSprout
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-02">
+                                    <div class="folio-list__item-pic">
+                                        <img src="images/portfolio/project2.jpg"
+                                             srcset="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format 1x, https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format 2x" alt="Questly Project">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                            Development
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            Questly
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+
+                        </ul> <!-- end folio-list -->
+
+                    </div> <!-- end column -->
+
+
+                    <!-- Modal Templates Popup
+                    -------------------------------------------- -->
+                    <div id="modal-01" hidden>
+                        <div class="modal-popup">
+                            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2000&auto=format" alt="CodeSprout Project">
+                
+                            <div class="modal-popup__desc">
+                                <h5>CodeSprout</h5>
+                                <p>A Python-based project showcasing my development skills and passion for coding. Implemented various features and functionalities using modern programming practices.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Python</li>
+                                    <li>Development</li>
+                                </ul>
+                            </div>
+                
+                            <a href="https://github.com/Official-GK/CodeSprout" class="modal-popup__details">Visit Site</a>
+                        </div>
+                    </div> <!-- end modal -->
+
+                    <div id="modal-02" hidden>
+                        <div class="modal-popup">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format" alt="Questly Project">
+                
+                            <div class="modal-popup__desc">
+                                <h5>Questly</h5>
+                                <p>An innovative project demonstrating my ability to create practical solutions. Focused on delivering value through technology.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Development</li>
+                                    <li>Innovation</li>
+                                </ul>
+                            </div>
+                
+                            <a href="https://official-gk.github.io/questly_12/" class="modal-popup__details">Visit Site</a>
+                        </div>
+                    </div> <!-- end modal -->
+
+                </div> <!-- end works-portfolio -->
+
+            </section> <!-- end s-works -->
+
+
+            <!-- ### contact
+            ================================================== -->
+            <section id="contact" class="s-contact target-section">
+
+                <div class="row contact-top">
+                    <div class="column lg-12">
+                        <h1 class="text-pretitle">Get In Touch</h1>
+                        <p class="contact-text">
+                            I'm passionate about AI, ML, and Ethical Hacking. If you're interested in discussing technology,
+                            potential collaborations, or have any questions about my projects — feel free to reach out!
+                        </p>
+                    </div>
+                </div> <!-- end contact-top -->
+
+                <div class="row contact-bottom">
+                    <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
+                        <h3 class="text-pretitle">Reach me at</h3>
+                        <p class="contact-links">
+                            <a href="mailto:gauravkul2006@gmail.com" class="mailtoui">gauravkul2006@gmail.com</a> <br>
+                            <a href="tel:+917709841973">+91 7709841973</a>
+                        </p>
+                    </div>
+                    <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
+                        <h3 class="text-pretitle">Social</h3>
+                        <ul class="contact-social">
+                            <li><a href="https://github.com/Official-GK">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/gaurav-kulkarni-37b021216/">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    <div class="column lg-4 md-12 contact-block">
+                        <a href="mailto:gauravkul2006@gmail.com" class="mailtoui btn btn--medium u-fullwidth contact-btn">Say Hello.</a>
+                    </div>
+                </div> <!-- end contact-bottom -->
+
+            </section> <!-- end contact -->
+
+
+        </main> <!-- end s-content -->
+
+
+        <!-- ## footer
+        ================================================== -->
+        <footer class="s-footer">
+
+            <div class="row">
+                <div class="column ss-copyright">
+                    <span> 2025 Gaurav Kulkarni</span> 
+                </div>
+
+                <div class="ss-go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765.644 7.521-9 7.479 9-.764.645-6.236-7.53v21.884h-1v-21.883z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </footer> <!-- end s-footer -->
+
+
+    </div> <!-- end -s-pagewrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '30px', // Trigger earlier
+                threshold: 0.05 // Trigger with minimal visibility
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        requestAnimationFrame(() => {
+                            entry.target.classList.add('is-visible');
+                            if (entry.target.children.length > 0) {
+                                Array.from(entry.target.children).forEach((child, index) => {
+                                    child.style.setProperty('--item-index', index);
+                                });
+                            }
+                            // Unobserve after animation for better performance
+                            observer.unobserve(entry.target);
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            // Batch DOM operations
+            const elements = document.querySelectorAll('[data-animate-el], .intro-social, .folio-list__item, .service-item, .timeline__block, .skills-list, .text-huge-title');
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
